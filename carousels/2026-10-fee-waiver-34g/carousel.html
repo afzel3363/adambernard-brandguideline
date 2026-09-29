@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fee Waiver Carousel</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+  :root {
+    --blue: #107BFB;
+    --blue-dark: #0A5BC0;
+    --grey: #58595B;
+    --ink: #2B2C2E;
+    --white: #FFFFFF;
+    --light: #F4F4F4;
+    --alert: #E5484D;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #ccc; font-family: 'Barlow', sans-serif; }
+  .slide {
+    width: 1080px; height: 1350px; position: relative; overflow: hidden;
+    padding: 96px 88px; display: flex; flex-direction: column;
+    background: var(--white); color: var(--ink);
+  }
+  .slide.blue { background: var(--blue); color: var(--white); }
+  .slide.light { background: var(--light); }
+  .slide.dark { background: var(--ink); color: var(--white); }
+  h1, h2, .num, .kicker, .big { font-family: 'Barlow Condensed', sans-serif; }
+  .kicker { font-size: 34px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); }
+  .blue .kicker, .dark .kicker { color: rgba(255,255,255,.8); }
+  h1 { font-size: 132px; line-height: .95; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
+  h2 { font-size: 96px; line-height: 1; font-weight: 800; text-transform: uppercase; margin-top: 28px; }
+  p, li { font-size: 38px; line-height: 1.35; }
+  .lead { font-size: 44px; line-height: 1.3; font-weight: 500; margin-top: 40px; }
+  ul { list-style: none; margin-top: 56px; display: flex; flex-direction: column; gap: 34px; }
+  li { padding-left: 56px; position: relative; }
+  li::before { content: ""; position: absolute; left: 0; top: 16px; width: 24px; height: 24px; background: var(--blue); }
+  .blue li::before, .dark li::before { background: var(--white); }
+  b { font-weight: 700; }
+  .hl { color: var(--blue); }
+  .blue .hl { color: var(--white); background: var(--ink); padding: 0 12px; }
+  .footer {
+    margin-top: auto; display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--grey);
+  }
+  .blue .footer, .dark .footer { color: rgba(255,255,255,.85); }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand .mark { width: 40px; height: 40px; background: var(--blue); color: var(--white); display: grid; place-items: center; font-weight: 800; font-size: 26px; }
+  .blue .brand .mark { background: var(--white); color: var(--blue); }
+  .bar { position: absolute; left: 0; top: 0; width: 100%; height: 18px; background: var(--blue); }
+  .blue .bar { background: var(--ink); }
+  .pill { display: inline-block; align-self: flex-start; background: var(--ink); color: var(--white); font-family: 'Barlow Condensed'; font-weight: 700; font-size: 34px; letter-spacing: 2px; text-transform: uppercase; padding: 12px 26px; }
+  .card { background: var(--white); border-left: 14px solid var(--blue); padding: 40px 44px; margin-top: 48px; }
+  .card p { font-size: 36px; }
+  .card.bad { border-left-color: var(--alert); }
+  .swipe { font-family: 'Barlow Condensed'; font-weight: 700; font-size: 36px; letter-spacing: 2px; text-transform: uppercase; }
+  /* timeline */
+  .timeline { margin-top: 56px; display: flex; flex-direction: column; gap: 0; }
+  .step { display: grid; grid-template-columns: 200px 1fr; gap: 32px; padding: 26px 0; border-bottom: 2px solid #ddd; }
+  .step .d { font-family: 'Barlow Condensed'; font-weight: 800; font-size: 44px; color: var(--blue); text-transform: uppercase; }
+  .step p { font-size: 36px; }
+  .step.bad .d { color: var(--alert); }
+  .clock { display: flex; align-items: baseline; gap: 24px; margin-top: 40px; }
+  .clock .big { font-size: 300px; font-weight: 800; line-height: .85; color: var(--blue); }
+  .clock .unit { font-family: 'Barlow Condensed'; font-size: 64px; font-weight: 800; text-transform: uppercase; line-height: 1; }
+  .cta-btn { margin-top: 56px; align-self: flex-start; background: var(--white); color: var(--blue); font-family: 'Barlow Condensed'; font-weight: 800; font-size: 48px; text-transform: uppercase; letter-spacing: 1px; padding: 26px 48px; }
+  .trust { display: flex; gap: 40px; margin-top: 56px; font-family: 'Barlow Condensed'; font-size: 34px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .trust span { border-top: 4px solid rgba(255,255,255,.7); padding-top: 14px; }
+  .disclaimer { font-size: 24px; line-height: 1.4; color: rgba(255,255,255,.75); margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<!-- 1. HOOK -->
+<section class="slide blue" id="s1">
+  <div class="bar"></div>
+  <div class="kicker">Spouse &amp; partner visa extensions</div>
+  <h1 style="margin-top:56px">Your fee waiver used to protect your date.</h1>
+  <p class="lead" style="font-size:60px;font-weight:700;margin-top:64px">From 8 October,<br><span class="hl">only if you do this.</span></p>
+  <div class="footer">
+    <div class="brand"><div class="mark">AB</div>Adam Bernard Solicitors</div>
+    <div class="swipe">Swipe &rarr;</div>
+  </div>
+</section>
+
+<!-- 2. WHAT IS A FEE WAIVER -->
+<section class="slide light" id="s2">
+  <div class="bar"></div>
+  <div class="kicker">First, the basics</div>
+  <h2>A fee waiver is a request. <span class="hl">Not an application.</span></h2>
+  <ul>
+    <li>You ask the Home Office to waive the extension fee because you can't afford it.</li>
+    <li>If they agree, you <b>then</b> submit your actual extension (FLR) application.</li>
+    <li>Done right, the date you asked for the waiver counts as your application date.</li>
+    <li>That's what keeps you protected if your visa runs out while you wait.</li>
+  </ul>
+  <div class="footer"><div class="brand"><div class="mark">AB</div>adambernards.co.uk</div><div>2 / 6</div></div>
+</section>
+
+<!-- 3. SAME ROUTE -->
+<section class="slide" id="s3">
+  <div class="bar"></div>
+  <div class="kicker">New from 8 October 2026</div>
+  <h2>Same route.<br><span class="hl">No switching.</span></h2>
+  <p class="lead">Your follow-up application must be on the <b>same route</b> you named in your fee waiver request.</p>
+  <div class="card">
+    <p><b>Example:</b> you asked for a waiver on the partner route. Your extension must also be on the partner route.</p>
+  </div>
+  <div class="card bad">
+    <p><b>Apply on a different route</b> (e.g. private life) and your application date becomes the day you actually submit it. The waiver date no longer counts.</p>
+  </div>
+  <div class="footer"><div class="brand"><div class="mark">AB</div>Rules change: HC 584, para 34G</div><div>3 / 6</div></div>
+</section>
+
+<!-- 4. 10 WORKING DAYS -->
+<section class="slide light" id="s4">
+  <div class="bar"></div>
+  <div class="kicker">Then watch the clock</div>
+  <div class="clock"><div class="big">10</div><div class="unit">working<br>days</div></div>
+  <p class="lead">From the day you <b>receive</b> the fee waiver decision, you have 10 working days to submit your completed application.</p>
+  <ul style="margin-top:44px">
+    <li>Weekends and bank holidays don't count. Don't guess, count them.</li>
+    <li>Paid and applied before the decision arrived? Your waiver date still stands, as long as it's the same route.</li>
+  </ul>
+  <div class="footer"><div class="brand"><div class="mark">AB</div>adambernards.co.uk</div><div>4 / 6</div></div>
+</section>
+
+<!-- 5. MISS IT -->
+<section class="slide" id="s5">
+  <div class="bar"></div>
+  <div class="kicker">Miss it, and here's what happens</div>
+  <h2>Your protected date <span style="color:var(--alert)">disappears.</span></h2>
+  <div class="timeline">
+    <div class="step"><div class="d">1 Nov</div><p>Fee waiver request sent. Visa still valid.</p></div>
+    <div class="step"><div class="d">20 Nov</div><p>Visa expires. You're covered, <b>if</b> you follow up on time.</p></div>
+    <div class="step"><div class="d">5 Dec</div><p>Fee waiver decision received. 10 working day clock starts.</p></div>
+    <div class="step bad"><div class="d">Too late</div><p>You submit after day 10. Your application date is now <b>that day</b>, weeks after your visa ran out.</p></div>
+  </div>
+  <p class="lead" style="font-size:36px;margin-top:32px">That gap can leave you without lawful status, putting your right to work, rent and future applications at risk.</p>
+  <div class="footer"><div class="brand"><div class="mark">AB</div>adambernards.co.uk</div><div>5 / 6</div></div>
+</section>
+
+<!-- 6. CTA -->
+<section class="slide blue" id="s6">
+  <div class="bar"></div>
+  <div class="kicker">Before you submit anything</div>
+  <h1 style="margin-top:48px;font-size:120px">Visa expiring in the next 3 months?</h1>
+  <p class="lead" style="font-size:52px;font-weight:600">Send us a message before you submit anything. We'll check your route and your deadline.</p>
+  <div class="cta-btn">Send us a message</div>
+  <div class="trust"><span>SRA regulated</span><span>Fixed-fee quotes</span><span>Free consultation</span></div>
+  <p class="disclaimer">General information only, not legal advice. Rules in force from 8 October 2026 (HC 584).</p>
+  <div class="footer"><div class="brand"><div class="mark">AB</div>Adam Bernard Solicitors</div><div>6 / 6</div></div>
+</section>
+
+</body>
+</html>

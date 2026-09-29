@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fee Waiver Carousel v2</title>
+<link href="fonts/fonts.css" rel="stylesheet">
+<!--
+  Text + shading layer for each slide. Rendered with a transparent background and
+  placed over the AI photo in Canva. Open with ?preview to see it over the
+  low-res photo thumbnails (preview/p1.jpg ... p6.jpg).
+-->
+<style>
+  :root {
+    --ink: #0c110f;
+    --emerald: #0f3b2a;
+    --green: #1d6b45;
+    --green-hi: #2f8f5f;
+    --white: #ffffff;
+    --mute: rgba(255,255,255,.72);
+    --glass: rgba(18,24,21,.72);
+    --line: rgba(255,255,255,.16);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: transparent; font-family: 'Manrope', sans-serif; color: var(--white); }
+  .slide { width: 1080px; height: 1350px; position: relative; overflow: hidden; }
+  .preview .slide { background-size: cover; background-position: center; }
+  .shade { position: absolute; inset: 0; }
+  .corner { position: absolute; top: 40px; font-size: 22px; font-weight: 500; letter-spacing: .3px; color: var(--mute); }
+  .corner.l { left: 48px; } .corner.r { right: 48px; }
+  .content { position: absolute; left: 64px; right: 64px; }
+  h1 { font-size: 76px; line-height: 1.02; font-weight: 800; text-transform: uppercase; letter-spacing: -1.5px; }
+  h1.center { text-align: center; }
+  p { font-size: 30px; line-height: 1.38; font-weight: 500; }
+  .body { color: rgba(255,255,255,.86); margin-top: 22px; max-width: 760px; }
+  .glass { background: var(--glass); border: 1.5px solid var(--line); padding: 28px 32px; }
+  .glass p { font-size: 28px; }
+  .solid { background: var(--green); padding: 28px 32px; }
+  .solid p { font-size: 28px; font-weight: 600; }
+  .chip { display: inline-block; background: var(--green-hi); color: #fff; padding: 2px 10px; font-weight: 700; }
+  .ref { position: absolute; font-size: 20px; line-height: 1.35; color: var(--mute); text-align: right; }
+  .rows { display: flex; flex-direction: column; gap: 14px; margin-top: 36px; width: 640px; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+  .row p { font-size: 27px; }
+  .row .n { font-size: 22px; color: var(--mute); font-weight: 600; }
+  .swipe { position: absolute; bottom: 72px; left: 0; right: 0; text-align: center; font-size: 28px; font-weight: 600; }
+  .foot { position: absolute; bottom: 36px; left: 64px; right: 64px; text-align: center; font-size: 19px; line-height: 1.4; color: var(--mute); }
+  .label { position: absolute; background: rgba(18,24,21,.8); border: 1.5px solid var(--line); padding: 10px 16px; font-size: 21px; font-weight: 600; color: rgba(255,255,255,.9); }
+  .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #e5484d; margin-right: 10px; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<!-- 1. HOOK: couple at table, lower half -->
+<section class="slide" id="s1" data-bg="p1.jpg">
+  <div class="shade" style="background:linear-gradient(180deg, rgba(8,14,11,.78) 0%, rgba(8,14,11,.35) 42%, rgba(8,14,11,0) 60%, rgba(8,14,11,.55) 100%)"></div>
+  <div class="corner l">Spouse &amp; partner visas</div>
+  <div class="corner r">Adam Bernard Solicitors</div>
+  <div class="content" style="top:150px">
+    <h1 class="center" style="font-size:84px">Your fee waiver used to protect your date.</h1>
+    <div style="display:flex;justify-content:center;margin-top:34px">
+      <div class="glass" style="padding:20px 30px"><p style="font-size:32px;font-weight:600;text-align:center">From 8 October, only if you do this.</p></div>
+    </div>
+  </div>
+  <div class="swipe">Swipe &nbsp;&#10230;</div>
+</section>
+
+<!-- 2. REQUEST, NOT APPLICATION: laptop lower right -->
+<section class="slide" id="s2" data-bg="p2.jpg">
+  <div class="shade" style="background:linear-gradient(180deg, rgba(8,14,11,.82) 0%, rgba(8,14,11,.45) 45%, rgba(8,14,11,.15) 65%, rgba(8,14,11,.7) 100%)"></div>
+  <div class="corner l">Spouse &amp; partner visas</div>
+  <div class="corner r">Adam Bernard Solicitors</div>
+  <div class="content" style="top:130px">
+    <h1>A fee waiver is<br>a request. Not an<br>application.</h1>
+    <p class="body">You ask the Home Office to waive the extension fee because you can't afford it. If they agree, you <b>then</b> submit your FLR application.</p>
+  </div>
+  <div class="content" style="bottom:90px;right:auto;width:620px">
+    <div class="solid"><p>Done right, the date you asked for the waiver counts as your application date. That's what protects you if your visa runs out while you wait.</p></div>
+  </div>
+</section>
+
+<!-- 3. SAME ROUTE: two doors centre -->
+<section class="slide" id="s3" data-bg="p3.jpg">
+  <div class="shade" style="background:linear-gradient(180deg, rgba(8,14,11,.8) 0%, rgba(8,14,11,.3) 38%, rgba(8,14,11,.1) 58%, rgba(8,14,11,.8) 100%)"></div>
+  <div class="corner l">Spouse &amp; partner visas</div>
+  <div class="corner r">Adam Bernard Solicitors</div>
+  <div class="content" style="top:130px">
+    <h1>New from 8 October:<br>same route only</h1>
+    <p class="body" style="max-width:640px">Your follow-up application must be on the <b>same route</b> you named in your fee waiver request.</p>
+  </div>
+  <div class="ref" style="top:345px;right:64px">HC 584<br>para 34G(5)</div>
+  <div class="content" style="bottom:96px">
+    <div class="glass"><p>Asked for a waiver on the partner route? Your extension must be on the partner route too.</p></div>
+    <div class="solid" style="margin-top:14px;margin-left:220px"><p>Switch routes (e.g. to private life) and your application date becomes the day you actually submit.</p></div>
+  </div>
+</section>
+
+<!-- 4. 10 WORKING DAYS: hourglass lower right -->
+<section class="slide" id="s4" data-bg="p4.jpg">
+  <div class="shade" style="background:linear-gradient(90deg, rgba(8,14,11,.8) 0%, rgba(8,14,11,.55) 50%, rgba(8,14,11,.05) 80%), linear-gradient(180deg, rgba(8,14,11,.5) 0%, rgba(8,14,11,0) 40%)"></div>
+  <div class="corner l">Spouse &amp; partner visas</div>
+  <div class="corner r">Adam Bernard Solicitors</div>
+  <div class="content" style="top:130px">
+    <h1>Then the clock<br>starts ticking</h1>
+    <p class="body" style="max-width:620px">You have <span class="chip">10 working days</span> from receiving the fee waiver decision to submit your completed application.</p>
+  </div>
+  <div class="ref" style="top:150px;right:48px">HC 584<br>para 34G(4)</div>
+  <div class="content" style="bottom:90px">
+    <div class="rows">
+      <div class="row glass"><p>The clock starts when you <b>receive</b> the decision</p><span class="n">01</span></div>
+      <div class="row glass"><p>Weekends and bank holidays don't count. Count them, don't guess</p><span class="n">02</span></div>
+      <div class="row glass"><p>Paid and applied before the decision arrived? Your date still stands, if it's the same route</p><span class="n">03</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. MISS IT: padlock upper middle -->
+<section class="slide" id="s5" data-bg="p5.jpg">
+  <div class="shade" style="background:linear-gradient(180deg, rgba(8,14,11,.35) 0%, rgba(8,14,11,0) 30%, rgba(8,14,11,.55) 55%, rgba(8,14,11,.92) 75%)"></div>
+  <div class="corner l">Spouse &amp; partner visas</div>
+  <div class="corner r">Adam Bernard Solicitors</div>
+  <div class="label" style="top:560px;left:50%;transform:translateX(-50%)"><span class="dot"></span>application date: reset to day of submission</div>
+  <div class="content" style="bottom:110px">
+    <h1>Missed the 10-day<br>window?</h1>
+    <p class="body" style="max-width:900px">Your application date becomes the day you actually submit, not the day you asked for the waiver.</p>
+    <p style="margin-top:24px;font-weight:700;max-width:900px">If your visa has already run out by then, you could be left without lawful status, putting your right to work, rent and future applications at risk.</p>
+  </div>
+</section>
+
+<!-- 6. CTA: consultation, person centre-right -->
+<section class="slide" id="s6" data-bg="p6.jpg">
+  <div class="shade" style="background:linear-gradient(180deg, rgba(8,14,11,.35) 0%, rgba(8,14,11,0) 30%, rgba(8,14,11,.6) 55%, rgba(8,14,11,.93) 74%)"></div>
+  <div class="corner l">Spouse &amp; partner visas</div>
+  <div class="corner r">Adam Bernard Solicitors</div>
+  <div class="content" style="bottom:190px">
+    <h1>Visa expiring in the<br>next 3 months?</h1>
+    <p class="body">Send us a message before you submit anything.</p>
+    <div class="glass" style="margin-top:30px"><p style="text-align:center">We'll check your route and your 10-day deadline, with a fixed-fee quote and a free consultation.</p></div>
+  </div>
+  <div class="foot">SRA regulated · adambernards.co.uk<br>*General information only, not legal advice. Rules in force from 8 October 2026 (HC 584).</div>
+</section>
+
+<script>
+  if (location.search.includes('preview')) {
+    document.body.classList.add('preview');
+    document.querySelectorAll('.slide').forEach(s => s.style.backgroundImage = `url(preview/${s.dataset.bg})`);
+  }
+</script>
+</body>
+</html>
